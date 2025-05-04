@@ -24,39 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Form submission
-    const waitlistForm = document.getElementById('waitlist-form');
-    const formMessage = document.getElementById('form-message');
-
-    waitlistForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const email = waitlistForm.querySelector('input[type="email"]').value;
-        
-        try {
-            const response = await fetch('/subscribe', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email }),
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                formMessage.textContent = data.message;
-                formMessage.classList.add('success');
-                formMessage.classList.remove('error');
-                waitlistForm.reset();
-            } else {
-                throw new Error(data.message || 'Something went wrong');
-            }
-        } catch (error) {
-            formMessage.textContent = error.message;
-            formMessage.classList.add('error');
-            formMessage.classList.remove('success');
-        }
-    });
 }); 

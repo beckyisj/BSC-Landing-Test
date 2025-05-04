@@ -29,17 +29,4 @@ html {
 /* Custom focus styles */
 *:focus {
     outline: none;
-}
-
-/* Form message styles */
-#form-message {
-    transition: all 0.3s ease;
-}
-
-#form-message.success {
-    color: #10B981;
-}
-
-#form-message.error {
-    color: #EF4444;
 } 
