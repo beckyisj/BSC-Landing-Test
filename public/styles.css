@@ -1,0 +1,45 @@
+/* Chapter panel animations */
+.chapter-content {
+    transition: all 0.3s ease-in-out;
+}
+
+.chapter-content.show {
+    display: block;
+    opacity: 1;
+}
+
+.chapter-content.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.chapter-panel.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom focus styles */
+*:focus {
+    outline: none;
+}
+
+/* Form message styles */
+#form-message {
+    transition: all 0.3s ease;
+}
+
+#form-message.success {
+    color: #10B981;
+}
+
+#form-message.error {
+    color: #EF4444;
+} 
